@@ -166,13 +166,11 @@ export function HeroSection() {
               className="absolute -top-4 -left-4 w-14 h-14 glass-card rounded-xl flex items-center justify-center animate-float"
               style={{ animationDelay: "0.5s" }}
             >
-              <span className="text-2xl">🤖</span>
             </div>
             <div
               className="absolute -bottom-3 -right-3 w-12 h-12 glass-card rounded-xl flex items-center justify-center animate-float"
               style={{ animationDelay: "1s" }}
             >
-              <span className="text-xl">🧠</span>
             </div>
           </div>
         </div>

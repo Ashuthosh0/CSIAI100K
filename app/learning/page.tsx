@@ -71,7 +71,7 @@ export default function LearningPage() {
               100-Day AI <span className="gradient-text">Learning Journey</span>
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-6">
-              A structured curriculum designed by industry experts to take you from AI basics to advanced applications.
+              A Standardized 2-hour AI Awareness Session delivered by industry experts
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <Button size="default" className="bg-primary hover:bg-primary/90 text-white font-medium">
@@ -110,9 +110,9 @@ export default function LearningPage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-primary font-medium mb-3 block text-sm">Curriculum</span>
-            <h2 className="text-2xl lg:text-3xl font-semibold text-foreground mb-3 tracking-tight">Learning Tracks</h2>
+            <h2 className="text-2xl lg:text-3xl font-semibold text-foreground mb-3 tracking-tight">Program Format</h2>
             <p className="text-sm text-muted-foreground">
-              Six comprehensive tracks covering everything from AI basics to advanced applications.
+              Focused on covering everything from AI basics to advanced applications and Career Pathways.
             </p>
           </div>
 
@@ -128,14 +128,14 @@ export default function LearningPage() {
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-foreground">{track.title}</h3>
-                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                    {/* <div className="flex items-center gap-2 text-xs text-muted-foreground">
                       <span className="flex items-center gap-0.5">
                         <Clock className="w-3 h-3" /> {track.duration}
                       </span>
                       <span className="flex items-center gap-0.5">
                         <BookOpen className="w-3 h-3" /> {track.modules} Modules
                       </span>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground mb-3">{track.description}</p>
@@ -164,7 +164,7 @@ export default function LearningPage() {
               Join 100,000+ learners and become AI-ready with our comprehensive program.
             </p>
             <Button size="default" className="bg-primary hover:bg-primary/90 text-white font-medium">
-              Enroll Now - It's Free
+              Enroll Now
             </Button>
           </div>
         </div>

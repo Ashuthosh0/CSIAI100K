@@ -28,10 +28,10 @@ export function Navbar() {
           <Link href="/" className="flex items-center gap-2.5">
             <div className="relative w-10 h-10 lg:w-11 lg:h-11 rounded-xl overflow-hidden">
               <Image
-                src="/csiimg.png"
+                src="/logo.png"
                 alt="CSI Logo"
-                width={44}
-                height={44}
+                width={64}
+                height={64}
                 className="object-contain w-full h-full"
                 unoptimized
               />
