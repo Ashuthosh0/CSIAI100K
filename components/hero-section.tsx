@@ -2,178 +2,153 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play, Users, BookOpen, Award } from "lucide-react"
+import { Users, BookOpen, Award, ChevronLeft, ChevronRight } from "lucide-react"
+import Image from "next/image"
+import { motion, AnimatePresence } from "framer-motion"
+
+const carouselImages = [
+  {
+    id: 1,
+    src: "/hero1.jpeg",
+    alt: "Hero Image 1"
+  },
+  {
+    id: 2,
+    src: "/hero2.png",
+    alt: "Hero Image 2"
+  },
+  {
+    id: 3,
+    src: "/hero3.png",
+    alt: "Hero Image 3"
+  }
+
+]
 
 export function HeroSection() {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 99,
-    hours: 23,
-    minutes: 59,
-    seconds: 59,
-  })
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
 
+  // Auto-scroll every 5 seconds
   useEffect(() => {
-    const targetDate = new Date("2026-03-21T00:00:00").getTime()
-
     const timer = setInterval(() => {
-      const now = new Date().getTime()
-      const difference = targetDate - now
-
-      if (difference > 0) {
-        setTimeLeft({
-          days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-          hours: Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-          minutes: Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60)),
-          seconds: Math.floor((difference % (1000 * 60)) / 1000),
-        })
-      }
-    }, 1000)
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === carouselImages.length - 1 ? 0 : prevIndex + 1
+      )
+    }, 5000)
 
     return () => clearInterval(timer)
   }, [])
 
+  const goToPrevious = () => {
+    setCurrentImageIndex(
+      currentImageIndex === 0 ? carouselImages.length - 1 : currentImageIndex - 1
+    )
+  }
+
+  const goToNext = () => {
+    setCurrentImageIndex(
+      currentImageIndex === carouselImages.length - 1 ? 0 : currentImageIndex + 1
+    )
+  }
+
   return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden bg-gradient-to-br from-white via-blue-50/30 to-cyan-50/30">
-      {/* Background Effects - Lighter, more subtle */}
-      <div className="absolute top-1/4 -right-64 w-[500px] h-[500px] bg-primary/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 -left-64 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl" />
+    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
+      {/* Carousel Background */}
+      <div className="absolute inset-0">
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentImageIndex}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.9 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            className="absolute inset-0"
+          >
+            <Image
+              src={carouselImages[currentImageIndex].src}
+              alt={carouselImages[currentImageIndex].alt}
+              fill
+              className="object-cover"
+              priority
+              sizes="100vw"
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
-      {/* Grid Pattern - Very subtle for light theme */}
-      <div
-        className="absolute inset-0 opacity-[0.03]"
-        style={{
-          backgroundImage: `linear-gradient(rgba(37, 99, 235, 0.5) 1px, transparent 1px),
-                           linear-gradient(90deg, rgba(37, 99, 235, 0.5) 1px, transparent 1px)`,
-          backgroundSize: "50px 50px",
-        }}
-      />
+      {/* Overlay for readability */}
+      <div className="absolute inset-0 bg-black/50" />
 
-      <div className="container mx-auto px-4 lg:px-8 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Left Content */}
-          <div className="text-center lg:text-left">
-            {/* Badge - Smaller, cleaner */}
-            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 mb-6">
-              <span className="relative flex h-1.5 w-1.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-primary"></span>
-              </span>
-              <span className="text-xs font-medium text-primary">World's Largest AI Readiness Program</span>
+      {/* Carousel Navigation */}
+      <button
+        onClick={goToPrevious}
+        className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300 group"
+      >
+        <ChevronLeft className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
+      </button>
+
+      <button
+        onClick={goToNext}
+        className="absolute right-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/20 backdrop-blur-sm hover:bg-white/30 transition-all duration-300 group"
+      >
+        <ChevronRight className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
+      </button>
+
+      {/* Carousel Indicators */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+        {carouselImages.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => setCurrentImageIndex(index)}
+            className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentImageIndex
+              ? "bg-white scale-110"
+              : "bg-white/50 hover:bg-white/70"
+              }`}
+          />
+        ))}
+      </div>
+
+      {/* Left Bottom Corner Content - Telangana 2047 Style */}
+      <div className="absolute bottom-16 left-12 z-20 max-w-2xl">
+        <div className="space-y-1">
+          {/* Main Title */}
+          <h1 className="text-4xl md:text-5xl font-normal text-white leading-none tracking-wide uppercase"
+            style={{ fontFamily: 'Arial, sans-serif', letterSpacing: '0.15em' }}>
+            CSI AI
+          </h1>
+
+          {/* Large Number with Geometric Element */}
+          <div className="flex items-center gap-6 mt-2">
+            <div className="text-8xl md:text-9xl font-bold text-white leading-none"
+              style={{ fontFamily: 'Arial, sans-serif' }}>
+              100K
             </div>
 
-            {/* Main Heading - Smaller, professional sizing */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-semibold leading-tight mb-5 tracking-tight">
-              <span className="text-foreground">CSI AI100K</span>
-              <br />
-              <span className="gradient-text">Make Bharat</span>
-              <br />
-              <span className="gradient-text">AI-Ready by 2026</span>
-            </h1>
-
-            {/* Description - Smaller text */}
-            <p className="text-base lg:text-lg text-muted-foreground mb-6 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-              A nationwide initiative equipping 100,000+ learners with practical AI literacy, hands-on demos, and a
-              verifiable CSI credential.
-            </p>
-
-            {/* CTA Buttons - Smaller, cleaner buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-10">
-              <Button
-                size="default"
-                className="bg-primary hover:bg-primary/90 text-white font-medium px-6 shadow-md group"
-              >
-                Register Now
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-              </Button>
-              <Button
-                size="default"
-                variant="outline"
-                className="border-border hover:bg-secondary font-medium group bg-transparent"
-              >
-                <Play className="mr-2 w-4 h-4" />
-                Explore Program
-              </Button>
-            </div>
-
-            {/* Stats - Smaller, cleaner stats */}
-            <div className="grid grid-cols-3 gap-4 max-w-sm mx-auto lg:mx-0">
-              <div className="text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-1.5 mb-0.5">
-                  <Users className="w-4 h-4 text-primary" />
-                  <span className="text-xl lg:text-2xl font-semibold text-foreground">100K+</span>
-                </div>
-                <span className="text-xs text-muted-foreground">Learners</span>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-1.5 mb-0.5">
-                  <BookOpen className="w-4 h-4 text-primary" />
-                  <span className="text-xl lg:text-2xl font-semibold text-foreground">100</span>
-                </div>
-                <span className="text-xs text-muted-foreground">Days Program</span>
-              </div>
-              <div className="text-center lg:text-left">
-                <div className="flex items-center justify-center lg:justify-start gap-1.5 mb-0.5">
-                  <Award className="w-4 h-4 text-primary" />
-                  <span className="text-xl lg:text-2xl font-semibold text-foreground">CSI</span>
-                </div>
-                <span className="text-xs text-muted-foreground">Certified</span>
-              </div>
-            </div>
           </div>
 
-          {/* Right Content - AI Visual + Countdown */}
-          <div className="relative">
-            {/* Main Visual Card - Light theme card */}
-            <div className="relative glass-card rounded-2xl p-6 lg:p-8 animate-float">
-              <div className="relative">
-                {/* AI Visual */}
-                <div className="aspect-square rounded-xl bg-gradient-to-br from-primary/10 via-accent/5 to-primary/5 flex items-center justify-center mb-6 overflow-hidden">
-                  <img
-                    src="/futuristic-ai-robot-head-with-glowing-blue-eyes-an.jpg"
-                    alt="AI Robot"
-                    className="w-full h-full object-cover rounded-xl"
-                  />
-                </div>
-
-                {/* Countdown Timer - Smaller, cleaner */}
-                <div className="bg-white rounded-xl p-4 shadow-sm border border-border">
-                  <p className="text-center text-muted-foreground mb-3 text-sm font-medium">
-                    100-Day Program Starts In
-                  </p>
-                  <div className="grid grid-cols-4 gap-2">
-                    {[
-                      { value: timeLeft.days, label: "Days" },
-                      { value: timeLeft.hours, label: "Hours" },
-                      { value: timeLeft.minutes, label: "Mins" },
-                      { value: timeLeft.seconds, label: "Secs" },
-                    ].map((item) => (
-                      <div key={item.label} className="text-center">
-                        <div className="bg-secondary rounded-lg py-2 px-1 mb-1">
-                          <span className="text-lg lg:text-xl font-semibold gradient-text">
-                            {String(item.value).padStart(2, "0")}
-                          </span>
-                        </div>
-                        <span className="text-[10px] text-muted-foreground uppercase tracking-wide">{item.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Floating Elements - Smaller */}
-            <div
-              className="absolute -top-4 -left-4 w-14 h-14 glass-card rounded-xl flex items-center justify-center animate-float"
-              style={{ animationDelay: "0.5s" }}
-            >
-            </div>
-            <div
-              className="absolute -bottom-3 -right-3 w-12 h-12 glass-card rounded-xl flex items-center justify-center animate-float"
-              style={{ animationDelay: "1s" }}
-            >
-            </div>
+          {/* Subtitle */}
+          <div className="mt-4 space-y-1">
+            <p className="text-lg md:text-xl text-white font-normal"
+              style={{ fontFamily: 'Arial, sans-serif' }}>
+              Make Bharat AI ready by 2026
+            </p>
+            <p className="text-lg md:text-xl text-white font-normal"
+              style={{ fontFamily: 'Arial, sans-serif' }}>
+              World's largest AI readiness initiative
+            </p>
           </div>
         </div>
+      </div>
+
+      {/* Right Bottom Corner Button - Telangana Style */}
+      <div className="absolute bottom-16 right-12 z-20">
+        <Button
+          variant="outline"
+          className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black text-base px-8 py-3 rounded-full font-normal transition-all duration-300"
+          style={{ fontFamily: 'Arial, sans-serif' }}
+        >
+          Explore program →
+        </Button>
       </div>
     </section>
   )

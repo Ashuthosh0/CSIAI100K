@@ -1,7 +1,24 @@
+"use client"
+
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
-import { BookOpen, Clock, Users, CheckCircle, Play, Download, ArrowRight } from "lucide-react"
+import { BookOpen, CheckCircle, Mail } from "lucide-react"
+
+const learningModules = [
+  {
+    title: "Introduction & Context",
+    description: "Demystify AI with real-world relevance and responsible use.",
+  },
+  {
+    title: "Hands-on Demo",
+    description: "Build a simple AI example on real-world data using beginner-friendly tools.",
+  },
+  {
+    title: "Industry Insights",
+    description: "Hear practitioner stories, case studies, and career pathways.",
+  },
+]
 
 const learningTracks = [
   {
@@ -48,14 +65,20 @@ const learningTracks = [
   },
 ]
 
-const resources = [
-  { title: "Video Lectures", count: "200+", icon: Play },
-  { title: "Practice Labs", count: "50+", icon: BookOpen },
-  { title: "Case Studies", count: "30+", icon: Download },
-  { title: "Live Sessions", count: "Weekly", icon: Users },
+const experienceHighlights = [
+  "Inclusive curriculum—no prior AI/programming needed",
+  "Community access to the nationwide CSI AI-100K network",
+  "Recognition that strengthens CVs and portfolios",
 ]
 
 export default function LearningPage() {
+  const scrollToCurriculum = () => {
+    const curriculumSection = document.getElementById('curriculum-section')
+    if (curriculumSection) {
+      curriculumSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+
   return (
     <main className="min-h-screen bg-white">
       <Navbar />
@@ -68,17 +91,13 @@ export default function LearningPage() {
           <div className="max-w-3xl mx-auto text-center">
             <span className="text-primary font-medium mb-3 block text-sm">Learning Path</span>
             <h1 className="text-3xl lg:text-4xl font-semibold text-foreground mb-4 tracking-tight">
-              100-Day AI <span className="gradient-text">Learning Journey</span>
+              Learning Journey & Modules
             </h1>
             <p className="text-base text-muted-foreground leading-relaxed max-w-2xl mx-auto mb-6">
-              A Standardized 2-hour AI Awareness Session delivered by industry experts
+              Accessible, inclusive, and hands-on—designed to spark AI readiness for all backgrounds.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
-              <Button size="default" className="bg-primary hover:bg-primary/90 text-white font-medium">
-                Start Learning
-                <ArrowRight className="ml-2 w-4 h-4" />
-              </Button>
-              <Button size="default" variant="outline">
+              <Button size="default" variant="outline" onClick={scrollToCurriculum}>
                 View Syllabus
               </Button>
             </div>
@@ -86,27 +105,33 @@ export default function LearningPage() {
         </div>
       </section>
 
-      {/* Resources Overview */}
-      <section className="py-10">
+      {/* Learning Modules - New Content */}
+      <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="bg-white rounded-2xl p-6 shadow-sm border border-border">
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-              {resources.map((resource) => (
-                <div key={resource.title} className="text-center">
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                    <resource.icon className="w-5 h-5 text-primary" />
-                  </div>
-                  <div className="text-xl font-semibold text-foreground">{resource.count}</div>
-                  <div className="text-xs text-muted-foreground">{resource.title}</div>
-                </div>
-              ))}
-            </div>
+          <div className="text-center max-w-2xl mx-auto mb-10">
+            <span className="text-primary font-medium mb-3 block text-sm">Overview</span>
+            <h2 className="text-2xl lg:text-3xl font-semibold text-foreground mb-3 tracking-tight">Program Modules</h2>
+            <p className="text-sm text-muted-foreground">
+              Three core modules designed to build comprehensive AI understanding.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {learningModules.map((module) => (
+              <div
+                key={module.title}
+                className="bg-white rounded-xl p-6 border border-border hover:border-primary/30 hover:shadow-md transition-all duration-200"
+              >
+                <h3 className="text-lg font-semibold text-foreground mb-3">{module.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{module.description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Learning Tracks */}
-      <section className="py-16">
+      {/* Learning Tracks - Original Curriculum */}
+      <section className="py-16" id="curriculum-section">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-primary font-medium mb-3 block text-sm">Curriculum</span>
@@ -123,19 +148,11 @@ export default function LearningPage() {
                 className="bg-white rounded-xl p-5 border border-border hover:border-primary/30 hover:shadow-md transition-all duration-200"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center text-white font-semibold text-sm">
+                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary font-semibold text-sm">
                     {index + 1}
                   </div>
                   <div>
                     <h3 className="text-sm font-semibold text-foreground">{track.title}</h3>
-                    {/* <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                      <span className="flex items-center gap-0.5">
-                        <Clock className="w-3 h-3" /> {track.duration}
-                      </span>
-                      <span className="flex items-center gap-0.5">
-                        <BookOpen className="w-3 h-3" /> {track.modules} Modules
-                      </span>
-                    </div> */}
                   </div>
                 </div>
                 <p className="text-xs text-muted-foreground mb-3">{track.description}</p>
@@ -153,19 +170,57 @@ export default function LearningPage() {
         </div>
       </section>
 
+      {/* Experience Highlights */}
+      <section className="py-16 bg-slate-50">
+        <div className="container mx-auto px-4 lg:px-8">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12">
+              {/* Left Column */}
+              <div>
+                <h2 className="text-2xl lg:text-3xl font-semibold text-foreground mb-6">Experience Highlights</h2>
+                <ul className="space-y-4">
+                  {experienceHighlights.map((highlight) => (
+                    <li key={highlight} className="flex items-start gap-3 text-muted-foreground">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                      <span className="leading-relaxed">{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Right Column */}
+              <div>
+                <h2 className="text-2xl lg:text-3xl font-semibold text-foreground mb-6">Session Structure</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Short, interactive segments mixing concepts, demos, and Q&A to keep momentum and maximize takeaways.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-6 lg:p-10 text-center max-w-2xl mx-auto border border-primary/10">
-            <h2 className="text-xl lg:text-2xl font-semibold text-foreground mb-3 tracking-tight">
-              Ready to Start Your AI Journey?
-            </h2>
-            <p className="text-sm text-muted-foreground mb-6">
-              Join 100,000+ learners and become AI-ready with our comprehensive program.
-            </p>
-            <Button size="default" className="bg-primary hover:bg-primary/90 text-white font-medium">
-              Enroll Now
-            </Button>
+          <div className="bg-white rounded-2xl p-6 lg:p-10 border border-border max-w-4xl mx-auto">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div className="text-center md:text-left">
+                <p className="text-xs text-muted-foreground mb-2">
+                  © Computer Society of India – Hyderabad Chapter | CSI Technology Hub
+                </p>
+                <h2 className="text-xl lg:text-2xl font-semibold text-foreground">Ready to join AI100K?</h2>
+              </div>
+              <div className="flex flex-col sm:flex-row items-center gap-3">
+                <span className="text-sm text-muted-foreground">Questions?</span>
+                <a
+                  href="mailto:ai100k@csihydchapter.org"
+                  className="text-primary hover:underline font-medium"
+                >
+                  ai100k@csihydchapter.org
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>

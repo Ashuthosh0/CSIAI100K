@@ -13,7 +13,7 @@ const navItems = [
   { name: "About", href: "/about" },
   { name: "Learning", href: "/learning" },
   { name: "Certificate", href: "/certificate" },
-  { name: "Team", href: "/team" },
+  { name: "Gallery", href: "/team" },
 ]
 
 export function Navbar() {
@@ -23,47 +23,56 @@ export function Navbar() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-xl border-b border-border">
       <nav className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-14 lg:h-16">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2.5">
-            <div className="relative w-10 h-10 lg:w-11 lg:h-11 rounded-xl overflow-hidden">
+        <div className="flex items-center justify-between h-20 lg:h-25">
+          {/* CSI Logo - Left side */}
+          <Link href="/" className="flex items-center ml-4 lg:ml-8">
+            <div className="relative w-16 h-16 lg:w-35 lg:h-35 rounded-xl overflow-hidden">
               <Image
                 src="/logo.png"
                 alt="CSI Logo"
-                width={64}
-                height={64}
+                width={128}
+                height={128}
                 className="object-contain w-full h-full"
-                unoptimized
+                priority
               />
-            </div>
-            <div className="hidden sm:block">
-              <span className="text-base lg:text-lg font-semibold text-foreground tracking-tight">AI100K</span>
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-0.5">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className={cn(
-                  "px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200",
-                  pathname === item.href
-                    ? "bg-primary text-primary-foreground"
-                    : "text-muted-foreground hover:text-foreground hover:bg-secondary",
-                )}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* CTA Button */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* Desktop Navigation & CTA Button + CSI100K Logo */}
+          <div className="hidden lg:flex items-center gap-6">
+            <div className="flex items-center gap-0.5">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.href}
+                  className={cn(
+                    "px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200",
+                    pathname === item.href
+                      ? "bg-primary text-primary-foreground"
+                      : "text-muted-foreground hover:text-foreground hover:bg-secondary",
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
             <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-medium px-4 shadow-sm">
               Register Now
             </Button>
+
+            {/* CSI100K Logo - Right side */}
+            <Link href="/" className="flex items-center">
+              <div className="relative w-45 h-45 lg:w-47 lg:h-47 rounded-xl overflow-hidden">
+                <Image
+                  src="/csi100klogo.png"
+                  alt="CSI100K Logo"
+                  width={128}
+                  height={128}
+                  className="object-contain w-full h-full"
+                  priority
+                />
+              </div>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
