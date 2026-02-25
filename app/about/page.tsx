@@ -59,7 +59,7 @@ export default function AboutPage() {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
-              <span className="text-primary font-medium mb-3 block text-sm">Computer Society of India</span>
+              <span className="text-primary font mb-5 text-4xl">Computer Society of India</span>
               <h2 className="text-2xl lg:text-3xl font-semibold text-foreground mb-4 tracking-tight">
                 India's Premier IT Professional Body
               </h2>

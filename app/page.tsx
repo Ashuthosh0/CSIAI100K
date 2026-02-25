@@ -14,7 +14,7 @@ export default function HomePage() {
       <HeroSection />
       <FeaturesSection />
       <CollegeLogosSection />
-      <StatsSection />
+      {/* <StatsSection /> */}
       <TimelineSectionModern />
       <CTASection />
       <Footer />

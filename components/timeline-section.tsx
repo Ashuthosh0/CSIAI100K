@@ -35,7 +35,7 @@ const timelineData: TimelineItem[] = [
     fullDate: "December 2025",
     title: "Telangana Rising Global Summit 2025",
     description:
-      "AI fundamentals and core concepts training begins for the first cohort of learners. Comprehensive curriculum covering machine learning basics, mathematics, and practical applications with expert instructors.",
+      "Represented CSI Hyderabad Chapter at the Telangana Rising Global Summit 2025. Introduced the CSI AI 100K program to government officials, industry leaders, and media reporters at the event. Shared the vision of making 100,000+ Indians AI-ready and discussed the program's impact on India's technological future.",
     images: [
       "/dec/summit2.jpeg",
       "/dec/summit3.jpeg",
@@ -44,40 +44,39 @@ const timelineData: TimelineItem[] = [
     ],
 
     height: "140vh",
-    bullets: ["Core ML concepts", "Mathematics refreshers", "Weekly labs and quizzes", "Peer learning groups", "Expert mentorship sessions"],
+    bullets: ["Represented CSI Hyderabad Chapter", "Introduced AI 100K program to officials and media", "Shared vision with government and industry leaders", "Discussed program impact on India's AI future", "Networking with key stakeholders"],
   },
   {
     date: "Jan 2026",
     fullDate: "January 2026",
-    title: "AI 100K Program at multiple institutions",
+    title: "AI 100K Program at Multiple Institutions",
     description:
-      "Hands-on projects and real-world AI applications development phase starts. Students work on industry-relevant projects with mentorship from leading AI practitioners and build comprehensive portfolios.",
+      "Trainers with industry expertise conducted AI 100K sessions at multiple universities, colleges, and institutions across Telangana including ICFAI Institute of Science and Technology, SR University, Vignana Bharathi Institute of Technology (VBIT), and Mahatma Gandhi Institute of Technology (MGIT) and many other institutions. Helped students learn about AI fundamentals, network with industry experts, and understand future scopes and opportunities in artificial intelligence. Successfully trained 25,000+ students.",
     images: [
       "/jan/icfai.jpeg",
       "/jan/jntu.jpeg",
       "/jan/mgit.jpeg",
-      // "/jan/sru.jpeg",
       "/jan/vbit.jpeg",
     ],
-    stats: "milestone",
+    stats: "25,000+ students trained",
     height: "130vh",
-    bullets: ["Real-world project assignments", "Industry mentor guidance", "Portfolio development", "Technical skill assessments", "Team collaboration projects"],
+    bullets: ["Industry expert trainers conducted sessions", "Covered AI fundamentals and applications", "Students networked with industry professionals", "Explored future AI career opportunities", "Hands-on learning experiences"],
   },
   {
     date: "Feb 2026",
     fullDate: "Febraury 2026",
     title: "50,000+ Students AI Ready",
     description:
-      "Partnership with leading companies for internships and placement opportunities. Direct connection between learners and industry requirements through networking events and job fairs.",
+      "Continued the AI 100K training program with industry expert trainers conducting comprehensive sessions at leading institutions across Telangana including BV Raju Institute of Technology (BVRIT), Maturi Venkata Subba Rao Engineering College (MVSR), Narasimha Reddy Engineering Collge(NRCM), and Vasavi College of Engineering. Students gained in-depth knowledge of AI technologies, networked with industry professionals, and explored career opportunities in the AI domain.",
     images: [
       "/feb/bvrit.jpg",
       "/feb/mvsr.jpg",
       "/feb/nrsm.jpg",
       "/feb/vasavi.jpg",
     ],
-    stats: "200+ partner companies",
+    stats: "50,000+ students trained",
     height: "110vh",
-    bullets: ["Company partnerships", "Internship programs", "Job placement drives", "Industry networking events"],
+    bullets: ["Expert-led training sessions at institutions", "Comprehensive AI curriculum delivery", "Industry networking opportunities", "Career guidance and mentorship", "Practical AI skill development"],
   },
   {
     date: "Mar 2026",
@@ -85,26 +84,10 @@ const timelineData: TimelineItem[] = [
     title: "Mega Event",
     description:
       "coming soon...",
-    // images: [
-    //   "/professional-indian-female-academic-portrait.jpg",
-    //   "/indian-male-startup-cto-portrait.jpg",
-    //   "/indian-female-data-scientist-portrait.jpg",
-    // ],
-    // stats: "75,000+ certified",
     height: "125vh",
-    bullets: ["Comprehensive final assessments", "Industry-recognized CSI certification", "Career guidance sessions", "Alumni network access"],
+    bullets: ["Sponsored event", "Invite-only exclusive gathering", "Industry leaders and Government officials", "Program milestone celebration", "Future roadmap announcement"],
   },
-  // {
-  //   date: "Mar 2026",
-  //   fullDate: "March 2026",
-  //   title: "Mission Complete",
-  //   description:
-  //     "Achievement of 100,000+ AI-ready professionals contributing to Bharat's digital future. Celebrating the success of India's largest AI readiness program and planning for future initiatives.",
-  //   images: ["/indian-male-startup-cto-portrait.jpg", "/modern-conference-room-with-ai-presentation-screen.jpg"],
-  //   stats: "100,000+ AI-ready professionals",
-  //   height: "100vh",
-  //   bullets: ["Mission accomplished", "100K+ certified professionals", "Industry impact assessment", "Future program planning"],
-  // },
+
 ]
 
 function useActiveIndexByIntersection(count: number) {

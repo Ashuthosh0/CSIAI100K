@@ -21,14 +21,14 @@ export function CTASection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
-              size="default"
-              className="bg-primary hover:bg-primary/90 text-white font-medium px-6 shadow-md group"
-            >
-              Download Brochure
-              
-            </Button>
-            
+            <a href="/brochure.jpeg" download="CSI-AI100K-Brochure.jpeg">
+              <Button
+                size="default"
+                className="bg-primary hover:bg-primary/90 text-white font-medium px-6 shadow-md group"
+              >
+                Download Brochure
+              </Button>
+            </a>
           </div>
         </div>
       </div>

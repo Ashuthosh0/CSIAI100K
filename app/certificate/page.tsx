@@ -28,10 +28,8 @@ const certificationBenefits = [
 
 const requirements = [
   "Complete all 6 learning tracks",
-  "Score 70% or above in assessments",
-  "Submit capstone project",
-  "Attend minimum 80% of live sessions",
-  "Complete peer review activities",
+  "Score 75% or above in assessments",
+  "Attend the 2hr session",
 ]
 
 const levels = [
@@ -72,15 +70,7 @@ export default function CertificatePage() {
                 Get recognized for your AI skills with an industry-standard certification from the Computer Society of
                 India.
               </p>
-              <div className="flex flex-wrap gap-3">
-                <Button size="default" className="bg-primary hover:bg-primary/90 text-white font-medium">
-                  Start Certification Path
-                </Button>
-                <Button size="default" variant="outline">
-                  <Download className="mr-2 w-4 h-4" />
-                  Sample Certificate
-                </Button>
-              </div>
+              
             </div>
             <div className="relative">
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-border animate-float">
@@ -128,36 +118,19 @@ export default function CertificatePage() {
       </section>
 
       {/* Certification Levels */}
-      <section className="py-16 bg-slate-50">
+      {/* <section className="py-16 bg-slate-50">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-primary font-medium mb-3 block text-sm">Levels</span>
             <h2 className="text-2xl lg:text-3xl font-semibold text-foreground tracking-tight">Certification Tiers</h2>
           </div>
-          <div className="grid md:grid-cols-3 gap-4 max-w-3xl mx-auto">
-            {levels.map((level, index) => (
-              <div
-                key={level.title}
-                className="bg-white rounded-xl p-5 text-center border border-border hover:border-primary/30 hover:shadow-md transition-all duration-200"
-              >
-                <div
-                  className={`w-12 h-12 rounded-xl bg-gradient-to-br ${level.color} flex items-center justify-center mx-auto mb-3`}
-                >
-                  <Award className="w-6 h-6 text-white" />
-                </div>
-                <span className="text-xs text-primary font-medium">Level {index + 1}</span>
-                <h3 className="text-sm font-semibold text-foreground mt-0.5 mb-1.5">{level.title}</h3>
-                <p className="text-xs text-muted-foreground">{level.description}</p>
-              </div>
-            ))}
-          </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Requirements */}
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 items-center max-w-4xl mx-auto">
+          <div className="max-w-2xl mx-auto">
             <div>
               <span className="text-primary font-medium mb-3 block text-sm">Requirements</span>
               <h2 className="text-2xl lg:text-3xl font-semibold text-foreground mb-4 tracking-tight">
@@ -174,23 +147,6 @@ export default function CertificatePage() {
                   </li>
                 ))}
               </ul>
-            </div>
-            <div className="bg-white rounded-xl p-6 border border-border shadow-sm">
-              <div className="flex items-center gap-3 mb-5">
-                <FileCheck className="w-10 h-10 text-primary" />
-                <div>
-                  <h3 className="text-base font-semibold text-foreground">Verify Certificate</h3>
-                  <p className="text-xs text-muted-foreground">Check authenticity instantly</p>
-                </div>
-              </div>
-              <div className="space-y-3">
-                <input
-                  type="text"
-                  placeholder="Enter Certificate ID"
-                  className="w-full px-3 py-2.5 rounded-lg bg-slate-50 border border-border focus:border-primary focus:outline-none transition-colors text-sm"
-                />
-                <Button className="w-full bg-primary hover:bg-primary/90 text-white text-sm">Verify Certificate</Button>
-              </div>
             </div>
           </div>
         </div>
