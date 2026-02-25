@@ -26,8 +26,8 @@ const values = [
 ]
 
 const milestones = [
-  { year: "2024", title: "Program Launch", description: "CSI AI100K initiative announced" },
-  { year: "2025", title: "100K Enrollments", description: "Reached enrollment milestone" },
+  { year: "Nov 2025", title: "Program Launch", description: "CSI AI100K initiative announced" },
+  { year: "Feb 2026", title: "50K Enrollments", description: "Reached enrollment milestone" },
   { year: "2026", title: "Certification", description: "First batch of certified AI practitioners" },
 ]
 
@@ -74,15 +74,15 @@ export default function AboutPage() {
               </p>
               <div className="flex gap-6">
                 <div>
-                  <div className="text-2xl font-semibold gradient-text">59+</div>
+                  <div className="text-2xl font-semibold gradient-text">60+</div>
                   <div className="text-xs text-muted-foreground">Years of Excellence</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-semibold gradient-text">100K+</div>
+                  <div className="text-2xl font-semibold gradient-text">150K+</div>
                   <div className="text-xs text-muted-foreground">Members</div>
                 </div>
                 <div>
-                  <div className="text-2xl font-semibold gradient-text">500+</div>
+                  <div className="text-2xl font-semibold gradient-text">72</div>
                   <div className="text-xs text-muted-foreground">Chapters</div>
                 </div>
               </div>
@@ -90,7 +90,7 @@ export default function AboutPage() {
             <div className="relative">
               <div className="bg-white rounded-2xl p-6 shadow-lg border border-border">
                 <img
-                  src="/modern-conference-room-with-ai-presentation-screen.jpg"
+                  src="/about.png"
                   alt="CSI Conference"
                   className="rounded-xl w-full"
                 />

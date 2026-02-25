@@ -56,9 +56,9 @@ export function Navbar() {
                 </Link>
               ))}
             </div>
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-medium px-4 shadow-sm">
+            {/* <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-medium px-4 shadow-sm">
               Register Now
-            </Button>
+            </Button> */}
 
             {/* CSI100K Logo - Right side */}
             <Link href="/" className="flex items-center">

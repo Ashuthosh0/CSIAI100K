@@ -70,7 +70,7 @@ export function NavbarHome() {
                   key={item.name}
                   href={item.href}
                   className={cn(
-                    "px-3 py-1.5 rounded-full text-sm font-medium transition-all duration-200",
+                    "px-3 py-1.5 rounded-full text-base font-medium transition-all duration-200",
                     pathname === item.href
                       ? "bg-primary text-primary-foreground"
                       : "text-muted-foreground hover:text-foreground hover:bg-secondary",
@@ -80,9 +80,9 @@ export function NavbarHome() {
                 </Link>
               ))}
             </div>
-            <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-medium px-4 shadow-sm">
+            {/* <Button size="sm" className="bg-primary hover:bg-primary/90 text-white font-medium px-4 shadow-sm">
               Register Now
-            </Button>
+            </Button> */}
 
             {/* CSI100K Logo - Right side */}
             <Link href="/" className="flex items-center">

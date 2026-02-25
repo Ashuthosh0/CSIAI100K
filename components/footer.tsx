@@ -34,10 +34,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-5">
               <div className="relative w-9 h-9">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary to-accent rounded-lg rotate-6" />
-                <div className="absolute inset-0 bg-slate-900 rounded-lg flex items-center justify-center">
-                  <span className="text-sm font-bold text-white">AI</span>
-                </div>
+                
               </div>
               <span className="text-lg font-semibold text-white">CSI AI100K</span>
             </Link>
@@ -92,7 +89,7 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm text-slate-400">Computer Society of India, New Delhi, India</span>
+                <span className="text-sm text-slate-400">Computer Society of India, Hyderabad Chapter</span>
               </li>
               <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-primary flex-shrink-0" />
@@ -100,13 +97,13 @@ export function Footer() {
                   href="mailto:ai100k@csi-india.org"
                   className="text-sm text-slate-400 hover:text-white transition-colors"
                 >
-                  ai100k@csi-india.org
+                  ai100k@csihydchapter.org
                 </a>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-primary flex-shrink-0" />
                 <a href="tel:+911234567890" className="text-sm text-slate-400 hover:text-white transition-colors">
-                  +91 123 456 7890
+                  +91 96664 84891
                 </a>
               </li>
             </ul>

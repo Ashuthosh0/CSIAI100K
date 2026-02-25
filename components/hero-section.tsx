@@ -2,9 +2,10 @@
 
 import { useEffect, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { Users, BookOpen, Award, ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
+import Link from "next/link"
 
 const carouselImages = [
   {
@@ -112,7 +113,7 @@ export function HeroSection() {
       <div className="absolute bottom-16 left-12 z-20 max-w-2xl">
         <div className="space-y-1">
           {/* Main Title */}
-          <h1 className="text-4xl md:text-5xl font-normal text-white leading-none tracking-wide uppercase"
+          <h1 className="text-4xl md:text-5xl font-normal text-white leading-none tracking-wide uppercase pl-8"
             style={{ fontFamily: 'Arial, sans-serif', letterSpacing: '0.15em' }}>
             CSI AI
           </h1>
@@ -142,13 +143,15 @@ export function HeroSection() {
 
       {/* Right Bottom Corner Button - Telangana Style */}
       <div className="absolute bottom-16 right-12 z-20">
-        <Button
-          variant="outline"
-          className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black text-base px-8 py-3 rounded-full font-normal transition-all duration-300"
-          style={{ fontFamily: 'Arial, sans-serif' }}
-        >
-          Explore program →
-        </Button>
+        <Link href="/learning">
+          <Button
+            variant="outline"
+            className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-black text-base px-8 py-3 rounded-full font-normal transition-all duration-300"
+            style={{ fontFamily: 'Arial, sans-serif' }}
+          >
+            Explore program →
+          </Button>
+        </Link>
       </div>
     </section>
   )

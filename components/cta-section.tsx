@@ -9,9 +9,7 @@ export function CTASection() {
 
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-accent mb-6">
-            <Sparkles className="w-6 h-6 text-white" />
-          </div>
+          
 
           <h2 className="text-2xl lg:text-3xl xl:text-4xl font-semibold text-foreground mb-4 tracking-tight">
             Ready to Become <span className="gradient-text">AI-Ready?</span>
@@ -27,16 +25,10 @@ export function CTASection() {
               size="default"
               className="bg-primary hover:bg-primary/90 text-white font-medium px-6 shadow-md group"
             >
-              Register for Free
-              <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-            </Button>
-            <Button
-              size="default"
-              variant="outline"
-              className="border-border hover:bg-secondary font-medium bg-transparent"
-            >
               Download Brochure
+              
             </Button>
+            
           </div>
         </div>
       </div>

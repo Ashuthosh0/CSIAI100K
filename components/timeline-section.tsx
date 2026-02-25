@@ -23,8 +23,8 @@ const timelineData: TimelineItem[] = [
     description:
       "Official launch of CSI AI100K program with nationwide registration opening. This marks the beginning of India's largest AI readiness initiative, bringing together educational institutions, industry partners, and government support.",
     images: [
-      "/modern-conference-room-with-ai-presentation-screen.jpg",
-      "/futuristic-ai-robot-head-with-glowing-blue-eyes-an.jpg",
+      "/launch.jpg",
+      "/csibanner.jpeg",
     ],
     stats: "10,000+ registrations",
     height: "120vh",
@@ -33,41 +33,48 @@ const timelineData: TimelineItem[] = [
   {
     date: "Dec 2025",
     fullDate: "December 2025",
-    title: "Foundation Phase",
+    title: "Telangana Rising Global Summit 2025",
     description:
       "AI fundamentals and core concepts training begins for the first cohort of learners. Comprehensive curriculum covering machine learning basics, mathematics, and practical applications with expert instructors.",
     images: [
-      "/indian-female-data-scientist-portrait.jpg",
-      "/indian-male-tech-professional-portrait.jpg",
-      "/professional-indian-female-academic-portrait.jpg",
-      "/indian-male-startup-cto-portrait.jpg",
+      "/dec/summit2.jpeg",
+      "/dec/summit3.jpeg",
+      "/dec/summit4.jpeg",
+      "/hero2.png"
     ],
-    stats: "25,000+ active learners",
+
     height: "140vh",
     bullets: ["Core ML concepts", "Mathematics refreshers", "Weekly labs and quizzes", "Peer learning groups", "Expert mentorship sessions"],
   },
   {
     date: "Jan 2026",
     fullDate: "January 2026",
-    title: "Practical Training",
+    title: "AI 100K Program at multiple institutions",
     description:
       "Hands-on projects and real-world AI applications development phase starts. Students work on industry-relevant projects with mentorship from leading AI practitioners and build comprehensive portfolios.",
     images: [
-      "/modern-conference-room-with-ai-presentation-screen.jpg",
-      "/futuristic-ai-robot-head-with-glowing-blue-eyes-an.jpg",
-      "/indian-female-data-scientist-portrait.jpg",
+      "/jan/icfai.jpeg",
+      "/jan/jntu.jpeg",
+      "/jan/mgit.jpeg",
+      // "/jan/sru.jpeg",
+      "/jan/vbit.jpeg",
     ],
-    stats: "50,000+ projects completed",
+    stats: "milestone",
     height: "130vh",
     bullets: ["Real-world project assignments", "Industry mentor guidance", "Portfolio development", "Technical skill assessments", "Team collaboration projects"],
   },
   {
     date: "Feb 2026",
     fullDate: "Febraury 2026",
-    title: "Industry Integration",
+    title: "50,000+ Students AI Ready",
     description:
       "Partnership with leading companies for internships and placement opportunities. Direct connection between learners and industry requirements through networking events and job fairs.",
-    images: ["/indian-male-tech-professional-portrait.jpg", "/professional-indian-female-academic-portrait.jpg"],
+    images: [
+      "/feb/bvrit.jpg",
+      "/feb/mvsr.jpg",
+      "/feb/nrsm.jpg",
+      "/feb/vasavi.jpg",
+    ],
     stats: "200+ partner companies",
     height: "110vh",
     bullets: ["Company partnerships", "Internship programs", "Job placement drives", "Industry networking events"],
@@ -75,29 +82,29 @@ const timelineData: TimelineItem[] = [
   {
     date: "Mar 2026",
     fullDate: "March 2026",
-    title: "Certification Phase",
+    title: "Mega Event",
     description:
-      "Final assessments and CSI certification for qualified participants. Comprehensive evaluation of skills and knowledge gained throughout the program with industry-recognized credentials.",
-    images: [
-      "/professional-indian-female-academic-portrait.jpg",
-      "/indian-male-startup-cto-portrait.jpg",
-      "/indian-female-data-scientist-portrait.jpg",
-    ],
-    stats: "75,000+ certified",
+      "coming soon...",
+    // images: [
+    //   "/professional-indian-female-academic-portrait.jpg",
+    //   "/indian-male-startup-cto-portrait.jpg",
+    //   "/indian-female-data-scientist-portrait.jpg",
+    // ],
+    // stats: "75,000+ certified",
     height: "125vh",
     bullets: ["Comprehensive final assessments", "Industry-recognized CSI certification", "Career guidance sessions", "Alumni network access"],
   },
-  {
-    date: "Mar 2026",
-    fullDate: "March 2026",
-    title: "Mission Complete",
-    description:
-      "Achievement of 100,000+ AI-ready professionals contributing to Bharat's digital future. Celebrating the success of India's largest AI readiness program and planning for future initiatives.",
-    images: ["/indian-male-startup-cto-portrait.jpg", "/modern-conference-room-with-ai-presentation-screen.jpg"],
-    stats: "100,000+ AI-ready professionals",
-    height: "100vh",
-    bullets: ["Mission accomplished", "100K+ certified professionals", "Industry impact assessment", "Future program planning"],
-  },
+  // {
+  //   date: "Mar 2026",
+  //   fullDate: "March 2026",
+  //   title: "Mission Complete",
+  //   description:
+  //     "Achievement of 100,000+ AI-ready professionals contributing to Bharat's digital future. Celebrating the success of India's largest AI readiness program and planning for future initiatives.",
+  //   images: ["/indian-male-startup-cto-portrait.jpg", "/modern-conference-room-with-ai-presentation-screen.jpg"],
+  //   stats: "100,000+ AI-ready professionals",
+  //   height: "100vh",
+  //   bullets: ["Mission accomplished", "100K+ certified professionals", "Industry impact assessment", "Future program planning"],
+  // },
 ]
 
 function useActiveIndexByIntersection(count: number) {
@@ -120,8 +127,8 @@ function useActiveIndexByIntersection(count: number) {
       },
       {
         root: null,
-        threshold: [0.2, 0.35, 0.5, 0.65, 0.8],
-        rootMargin: "-20% 0px -55% 0px",
+        threshold: [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7],
+        rootMargin: "-30% 0px -30% 0px",
       }
     )
 
@@ -169,7 +176,7 @@ export function TimelineSectionModern({
       <div className="mx-auto max-w-7xl px-6">
         <div className="grid grid-cols-12 gap-8">
           {/* LEFT: Smaller month, moved towards left-center */}
-          <div className="col-span-12 md:col-span-3">
+          <div className="col-span-12 md:col-span-2">
             <div className="md:sticky md:top-24 md:h-[calc(100vh-6rem)] flex items-center">
               <div className="w-full text-center md:text-right pr-6 lg:pr-10">
                 <motion.div
@@ -204,8 +211,8 @@ export function TimelineSectionModern({
           </div>
 
           {/* RIGHT: Flexible content */}
-          <div className="col-span-12 md:col-span-8 pb-24">
-            <div className="space-y-20">
+          <div className="col-span-12 md:col-span-9 pb-24">
+            <div className="space-y-2">
               {data.map((item, idx) => {
                 return (
                   <div
@@ -219,7 +226,7 @@ export function TimelineSectionModern({
                     <motion.div
                       initial={{ opacity: 0, y: 30 }}
                       whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ amount: 0.3, once: false }}
+                      viewport={{ amount: 0.3, once: true }}
                       transition={{ duration: 0.6, ease: "easeOut" }}
                       className="w-full space-y-8"
                     >
@@ -266,7 +273,7 @@ export function TimelineSectionModern({
                                 key={i}
                                 initial={{ opacity: 0, scale: 0.95 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                viewport={{ amount: 0.3, once: false }}
+                                viewport={{ amount: 0.3, once: true }}
                                 transition={{ duration: 0.5, delay: i * 0.1 }}
                                 className={[
                                   "relative rounded-2xl overflow-hidden bg-black/5",
@@ -296,7 +303,7 @@ export function TimelineSectionModern({
                                 key={i}
                                 initial={{ opacity: 0, x: -20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ amount: 0.3, once: false }}
+                                viewport={{ amount: 0.3, once: true }}
                                 transition={{ duration: 0.4, delay: i * 0.1 }}
                                 className="flex items-start gap-3 p-4 rounded-xl bg-black/[0.02] border border-black/5"
                               >

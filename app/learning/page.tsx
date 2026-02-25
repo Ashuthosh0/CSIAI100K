@@ -192,7 +192,14 @@ export default function LearningPage() {
               <div>
                 <h2 className="text-2xl lg:text-3xl font-semibold text-foreground mb-6">Session Structure</h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  Short, interactive segments mixing concepts, demos, and Q&A to keep momentum and maximize takeaways.
+                 Total Duration
+~ 2 hours AI Readiness<br/>
+Mode
+Hybrid (online/offline)<br/>
+Schedule
+Shared by email upon registration<br/>
+Certification
+CSI-AI100K digital credential
                 </p>
               </div>
             </div>
@@ -207,7 +214,7 @@ export default function LearningPage() {
             <div className="flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="text-center md:text-left">
                 <p className="text-xs text-muted-foreground mb-2">
-                  © Computer Society of India – Hyderabad Chapter | CSI Technology Hub
+                  © Computer Society of India, Hyderabad Chapter
                 </p>
                 <h2 className="text-xl lg:text-2xl font-semibold text-foreground">Ready to join AI100K?</h2>
               </div>
