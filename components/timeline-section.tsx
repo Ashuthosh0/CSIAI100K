@@ -24,7 +24,7 @@ const timelineData: TimelineItem[] = [
       "Official launch of CSI AI100K program with nationwide registration opening. This marks the beginning of India's largest AI readiness initiative, bringing together educational institutions, industry partners, and government support.",
     images: [
       "/launch.jpg",
-      "/csibanner.jpeg",
+      "/aika.jpeg",
     ],
     stats: "10,000+ registrations",
     height: "120vh",
