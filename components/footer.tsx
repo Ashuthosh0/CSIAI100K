@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Facebook, Twitter, Linkedin, Instagram, Youtube, Mail, Phone, MapPin } from "lucide-react"
+import { Linkedin, Instagram, Mail, Phone, MapPin } from "lucide-react"
 
 const quickLinks = [
   { name: "Home", href: "/" },
@@ -17,12 +17,16 @@ const resources = [
   { name: "AI Ethics", href: "/learning" },
 ]
 
+const XIcon = () => (
+  <svg viewBox="0 0 24 24" className="w-4 h-4" fill="currentColor">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+  </svg>
+)
+
 const socialLinks = [
-  { name: "Facebook", icon: Facebook, href: "#" },
-  { name: "Twitter", icon: Twitter, href: "#" },
-  { name: "LinkedIn", icon: Linkedin, href: "#" },
-  { name: "Instagram", icon: Instagram, href: "#" },
-  { name: "YouTube", icon: Youtube, href: "#" },
+  { name: "X", icon: XIcon, href: "https://x.com/SocietyOf76433" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/computer-society-of-india-hyderabad-chapter" },
+  { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/csi_hyderabad/" },
 ]
 
 export function Footer() {
@@ -71,7 +75,7 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Learning Tracks</h3>
+            <h3 className="text-sm font-semibold text-white mb-4">AI 100K Session</h3>
             <ul className="space-y-2.5">
               {resources.map((link) => (
                 <li key={link.name}>

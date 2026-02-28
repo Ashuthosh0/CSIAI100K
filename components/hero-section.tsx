@@ -59,26 +59,30 @@ export function HeroSection() {
         <AnimatePresence mode="wait">
           <motion.div
             key={currentImageIndex}
-            initial={{ opacity: 0, scale: 1.1 }}
+            initial={{ opacity: 0, scale: 1.05 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 1, ease: "easeInOut" }}
+            exit={{ opacity: 0, scale: 1.05 }}
+            transition={{ 
+              duration: 1.2, 
+              ease: [0.43, 0.13, 0.23, 0.96]
+            }}
             className="absolute inset-0"
           >
             <Image
               src={carouselImages[currentImageIndex].src}
               alt={carouselImages[currentImageIndex].alt}
               fill
-              className="object-cover"
+              className="object-cover brightness-110"
               priority
               sizes="100vw"
+              quality={95}
             />
           </motion.div>
         </AnimatePresence>
       </div>
 
-      {/* Overlay for readability */}
-      <div className="absolute inset-0 bg-black/50" />
+      {/* Overlay for readability - reduced opacity */}
+      <div className="absolute inset-0 bg-black/40" />
 
       {/* Carousel Navigation */}
       <button
