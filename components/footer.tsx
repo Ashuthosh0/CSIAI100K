@@ -6,7 +6,7 @@ const quickLinks = [
   { name: "About CSI", href: "/about" },
   { name: "Learning Path", href: "/learning" },
   { name: "Certification", href: "/certificate" },
-  { name: "Our Team", href: "/team" },
+  { name: "Gallery", href: "/gallery" },
 ]
 
 const resources = [
@@ -34,7 +34,7 @@ export function Footer() {
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center gap-2.5 mb-5">
               <div className="relative w-9 h-9">
-                
+
               </div>
               <span className="text-lg font-semibold text-white">CSI AI100K</span>
             </Link>
