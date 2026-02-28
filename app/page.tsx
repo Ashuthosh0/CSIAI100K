@@ -6,10 +6,13 @@ import { CollegeLogosSection } from "@/components/college-logos-section"
 import { StatsSection } from "@/components/stats-section"
 import { TimelineSectionModern } from "@/components/timeline-section"
 import { CTASection } from "@/components/cta-section"
+import { EventPopup } from "@/components/event-popup"
+
 
 export default function HomePage() {
   return (
     <main className="min-h-screen">
+      <EventPopup />
       <NavbarHome />
       <HeroSection />
       <FeaturesSection />
