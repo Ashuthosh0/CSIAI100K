@@ -21,7 +21,7 @@ export function CTASection() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href="/brochure.jpeg" download="CSI-AI100K-Brochure.jpeg">
+            <a href="http://www.brecw.ac.in/DownloadPDF/CSI-100K%20BROCHURE.pdf" target="_blank" rel="noopener noreferrer">
               <Button
                 size="default"
                 className="bg-primary hover:bg-primary/90 text-white font-medium px-6 shadow-md group"
